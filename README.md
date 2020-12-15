@@ -8,7 +8,7 @@
 3. Press F5 to run the game from the editor. Or press play in the Scene Menu.  
 ![running](./docs/images/running.png)  
 
-*The default configuration uses the .gd scripts. If you prefer C#, update the scripts to use their C# counterparts.*
+*The default configuration uses .gd. If you prefer C#, update the scripts to use their C# counterparts.*
 # Using C#  
 1. Right-click the nodes in the Scene-tree.   
 ![selecting nodes](./docs/images/selectingNodes.png)  
