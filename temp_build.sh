@@ -1,0 +1,1 @@
+scons -C "/home/kumi/.local/share/godot/native" bits=64 target_path="/home/kumi/.local/share/godot/native/bin/test" src_path="/home/kumi/.local/share/godot/native/src/test" platform=linux target=debug -j1

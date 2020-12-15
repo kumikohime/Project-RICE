@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Debug.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Player.cs" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 662.604, 10 )
+
+[node name="World" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="Debug" type="Label" parent="."]
+margin_left = 753.409
+margin_top = 7.3642
+margin_right = 1020.41
+margin_bottom = 339.364
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+target_path = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 230.418, 443.621 )
+script = ExtResource( 5 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2( 820.548, 584.272 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor"]
+position = Vector2( 1.08994, 2.245 )
+scale = Vector2( 20.5607, 0.333538 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 0, -6.10352e-05 )
+shape = SubResource( 1 )
+
+[node name="SlopedFloor" type="StaticBody2D" parent="."]
+position = Vector2( 613.953, 584.272 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="SlopedFloor"]
+position = Vector2( 1.08994, 2.245 )
+rotation = -0.785398
+scale = Vector2( 20.5607, 0.333538 )
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SlopedFloor"]
+polygon = PoolVector2Array( 0.721436, -10.8926, 298.023, -309.384, 288.51, -271.329, 13.8027, 3.37793 )
